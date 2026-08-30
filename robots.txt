@@ -7,4 +7,4 @@ Disallow: /backend/
 Disallow: /.netlify/
 
 # Sitemap location
-Sitemap: https://votre-site.netlify.app/sitemap.xml
+Sitemap: https://portfolio-tsitana-khyme.netlify.app/sitemap.xml
