@@ -16,7 +16,7 @@ const CONFIG = {
     phone: '+261 34 57 047 80',
     whatsapp: '261345704780',
     linkedin: 'khyme-tsitana-web-developer',
-    github: 'tsitanakhyme',
+    github: 'Khyme667',
 
     // CV download URL
     cvUrl: './src/CV_Tsitana_Khyme_dev_Odoo.pdf',
