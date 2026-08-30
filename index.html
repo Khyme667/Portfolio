@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsitana Khyme — Développeur & Consultant Odoo</title>
+    <meta name="description" content="Développeur et Consultant Odoo expérimenté. Développement de modules, intégration ERP, formation et accompagnement sur mesure.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🟣</text></svg>">
+</head>
+<body>
+    <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">{</span>TK<span class="logo-bracket">}</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#portfolio">Réalisations</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">
+                    <span class="typing-cursor">▍</span> Bonjour, je suis
+                </p>
+                <h1 class="hero-name">
+                    Tsitana <span class="text-accent">Khyme</span>
+                </h1>
+                <h2 class="hero-title">
+                    Développeur & Consultant <span class="odoo-badge">Odoo</span>
+                </h2>
+                <p class="hero-description">
+                    Je conçois, développe et déploie des solutions Odoo sur mesure
+                    pour transformer vos processus métier. De l'analyse des besoins
+                    à la mise en production, je vous accompagne à chaque étape.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Démarrer un projet
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline">
+                        <i class="fas fa-eye"></i> Voir mes réalisations
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Années d'expérience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Projets livrés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="20">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Clients satisfaits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span style="background:#ff5f57"></span>
+                            <span style="background:#ffbd2e"></span>
+                            <span style="background:#28c840"></span>
+                        </div>
+                        <span class="code-title">odoo_module.py</span>
+                    </div>
+                    <pre class="code-body"><code><span class="code-keyword">class</span> <span class="code-class">CustomModule</span>(models.Model):
+    <span class="code-attr">_name</span> = <span class="code-string">'custom.module'</span>
+    <span class="code-attr">_description</span> = <span class="code-string">'Solution sur mesure'</span>
+
+    name = fields.Char(
+        string=<span class="code-string">'Nom'</span>,
+        required=<span class="code-keyword">True</span>
+    )
+    state = fields.Selection([
+        (<span class="code-string">'draft'</span>, <span class="code-string">'Brouillon'</span>),
+        (<span class="code-string">'done'</span>, <span class="code-string">'Terminé'</span>),
+    ], default=<span class="code-string">'draft'</span>)
+
+    <span class="code-keyword">def</span> <span class="code-func">action_validate</span>(self):
+        self.state = <span class="code-string">'done'</span>
+        <span class="code-keyword">return</span> <span class="code-keyword">True</span></code></pre>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Défiler vers le bas">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-user"></i> À propos</span>
+                <h2 class="section-title">Qui suis-je ?</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-photo-frame">
+                        <img src="./src/img/profil.png" alt="Tsitana Khyme">
+                    </div>
+                    <div class="about-decorations">
+                        <div class="decoration-dot dot-1"></div>
+                        <div class="decoration-dot dot-2"></div>
+                        <div class="decoration-line"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>Développeur & Consultant Odoo</h3>
+                    <p>
+                        Passionné par l'écosystème Odoo et le développement de solutions ERP,
+                        j'accompagne les entreprises dans leur transformation digitale. Fort de
+                        plusieurs années d'expérience, je maîtrise l'ensemble de la chaîne
+                        de valeur Odoo : analyse fonctionnelle, développement de modules
+                        personnalisés, intégration, migration et formation.
+                    </p>
+                    <p>
+                        Mon approche combine expertise technique et compréhension métier
+                        pour livrer des solutions qui répondent réellement aux besoins de
+                        chaque organisation. Je travaille aussi bien avec des startups
+                        qu'avec des entreprises établies, en mode projet ou en accompagnement continu.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Madagascar</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-globe"></i>
+                            <span>Disponible en remote</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-language"></i>
+                            <span>Français · Malagasy</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-handshake"></i>
+                            <span>Freelance & contrat</span>
+                        </div>
+                    </div>
+                    <a href="./src/CV_Tsitana_Khyme_dev_Odoo.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Télécharger mon CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-cogs"></i> Services</span>
+                <h2 class="section-title">Ce que je propose</h2>
+                <p class="section-subtitle">Des solutions Odoo complètes, de la conception à la maintenance</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Développement de modules</h3>
+                    <p>
+                        Conception et développement de modules Odoo personnalisés
+                        (Python/XML/JS) adaptés à vos processus métier spécifiques.
+                    </p>
+                    <ul class="service-features">
+                        <li>Modules sur mesure</li>
+                        <li>Extension de modules existants</li>
+                        <li>API & connecteurs</li>
+                        <li>Reports QWeb personnalisés</li>
+                    </ul>
+                </div>
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-badge">Populaire</div>
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Intégration & déploiement</h3>
+                    <p>
+                        Mise en place complète d'Odoo : installation, configuration,
+                        paramétrage fonctionnel et migration de données.
+                    </p>
+                    <ul class="service-features">
+                        <li>Installation & configuration</li>
+                        <li>Migration de données</li>
+                        <li>Intégration systèmes tiers</li>
+                        <li>Mise en production</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Conseil & formation</h3>
+                    <p>
+                        Accompagnement stratégique et formation de vos équipes
+                        pour une adoption réussie d'Odoo.
+                    </p>
+                    <ul class="service-features">
+                        <li>Audit & analyse des besoins</li>
+                        <li>Formation utilisateurs</li>
+                        <li>Support technique</li>
+                        <li>Accompagnement au changement</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Migration & upgrade</h3>
+                    <p>
+                        Migration vers les dernières versions d'Odoo avec
+                        préservation des données et personnalisations.
+                    </p>
+                    <ul class="service-features">
+                        <li>Migration de version</li>
+                        <li>Adaptation des modules</li>
+                        <li>Tests de régression</li>
+                        <li>Optimisation performance</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX & thèmes Odoo</h3>
+                    <p>
+                        Personnalisation de l'interface Odoo et développement
+                        de thèmes pour le site e-commerce et le portail.
+                    </p>
+                    <ul class="service-features">
+                        <li>Thèmes website</li>
+                        <li>Personnalisation backend</li>
+                        <li>E-commerce sur mesure</li>
+                        <li>Portail client</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Maintenance & support</h3>
+                    <p>
+                        Suivi continu, correction de bugs, évolutions
+                        fonctionnelles et support technique réactif.
+                    </p>
+                    <ul class="service-features">
+                        <li>Contrats de maintenance</li>
+                        <li>Monitoring & alertes</li>
+                        <li>Corrections & patchs</li>
+                        <li>Évolutions continues</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-laptop-code"></i> Compétences</span>
+                <h2 class="section-title">Stack technique</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-cube"></i> Odoo</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag primary">Odoo 8–19</span>
+                        <span class="skill-tag primary">ORM</span>
+                        <span class="skill-tag primary">QWeb</span>
+                        <span class="skill-tag primary">OWL</span>
+                        <span class="skill-tag primary">XML Views</span>
+                        <span class="skill-tag primary">Workflows</span>
+                        <span class="skill-tag primary">Reports</span>
+                        <span class="skill-tag primary">Wizards</span>
+                        <span class="skill-tag primary">API REST</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">XML-RPC</span>
+                        <span class="skill-tag">JSON-RPC</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-palette"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">SCSS</span>
+                        <span class="skill-tag">XML</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-briefcase"></i> Fonctionnel</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ventes & CRM</span>
+                        <span class="skill-tag">Achats</span>
+                        <span class="skill-tag">Stock & logistique</span>
+                        <span class="skill-tag">Fabrication (MRP)</span>
+                        <span class="skill-tag">RH & Paie</span>
+                        <span class="skill-tag">E-commerce</span>
+                        <span class="skill-tag">Point de vente</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Odoo version timeline -->
+            <div class="odoo-versions">
+                <h3>Versions Odoo maîtrisées</h3>
+                <div class="version-timeline">
+                    <div class="version-item">
+                        <span class="version-number">v8-12</span>
+                        <div class="version-bar" style="--level: 95%"></div>
+                    </div>
+                    <div class="version-item">
+                        <span class="version-number">v13-14</span>
+                        <div class="version-bar" style="--level: 100%"></div>
+                    </div>
+                    <div class="version-item">
+                        <span class="version-number">v15-16</span>
+                        <div class="version-bar" style="--level: 100%"></div>
+                    </div>
+                    <div class="version-item active">
+                        <span class="version-number">v17-19</span>
+                        <div class="version-bar" style="--level: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
+    <section class="section section-alt" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
+                <h2 class="section-title">Réalisations récentes</h2>
+                <p class="section-subtitle">Une sélection de projets représentatifs</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="module">Modules</button>
+                <button class="filter-btn" data-filter="integration">Intégration</button>
+                <button class="filter-btn" data-filter="migration">Migration</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="integration">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Intégration</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ERP E-commerce complet</h3>
+                        <p>Déploiement Odoo 17 avec modules ventes, stock, comptabilité et e-commerce pour une entreprise de distribution.</p>
+                        <div class="portfolio-tags">
+                            <span>Odoo 17</span><span>E-commerce</span><span>Stock</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card" data-category="module">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Module</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Module logistique sur mesure</h3>
+                        <p>Développement d'un module de gestion logistique avec suivi temps réel, planification et rapports avancés.</p>
+                        <div class="portfolio-tags">
+                            <span>Python</span><span>OWL</span><span>API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card" data-category="module">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Module</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Paie & RH Madagascar</h3>
+                        <p>Module de paie adapté à la législation malgache : CNAPS, OSTIE, IRSA et gestion des congés locaux.</p>
+                        <div class="portfolio-tags">
+                            <span>Odoo 16</span><span>RH</span><span>Paie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card" data-category="migration">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Migration</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Migration Odoo 8 → Odoo 19</h3>
+                        <p>Migration majeure d'Odoo 8 vers 19 avec adaptation de modules personnalisés et migration de données complexes.</p>
+                        <div class="portfolio-tags">
+                            <span>Migration</span><span>Odoo 8-19</span><span>Scripts Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card" data-category="integration">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Intégration</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Connecteur API bancaire</h3>
+                        <p>Intégration des flux bancaires automatisés avec réconciliation comptable et notifications temps réel.</p>
+                        <div class="portfolio-tags">
+                            <span>API REST</span><span>Comptabilité</span><span>Cron</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card" data-category="module">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Module</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Dashboard analytique</h3>
+                        <p>Tableau de bord exécutif avec KPIs temps réel, graphiques interactifs OWL et exports automatisés.</p>
+                        <div class="portfolio-tags">
+                            <span>OWL</span><span>Chart.js</span><span>Reports</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROCESS ═══════════════════ -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-stream"></i> Processus</span>
+                <h2 class="section-title">Comment je travaille</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Découverte & Analyse</h3>
+                        <p>Compréhension approfondie de vos besoins métier, audit de l'existant et définition du périmètre du projet.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Conception & Planning</h3>
+                        <p>Architecture technique, spécifications fonctionnelles, maquettes et planning détaillé avec jalons.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Développement & Tests</h3>
+                        <p>Développement itératif avec démos régulières, tests unitaires et validations fonctionnelles à chaque sprint.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Déploiement & Formation</h3>
+                        <p>Mise en production, migration des données, formation des utilisateurs et documentation complète.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Suivi & Évolution</h3>
+                        <p>Support post-livraison, maintenance préventive, évolutions fonctionnelles et optimisation continue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+    <section class="section section-alt" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Témoignages</span>
+                <h2 class="section-title">Ce qu'ils disent</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        «&nbsp;Excellente rapidité et compréhension des besoins. Les solutions
+                        proposées sont robustes et bien pensées. Un développeur très actif
+                        avec un excellent rapport qualité-prix.&nbsp;»
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div>
+                            <strong>Directeur Général</strong>
+                            <span>Entreprise de distribution</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        «&nbsp;La migration de notre ERP s'est déroulée sans aucun problème
+                        grâce à la rigueur de Tsitana. Nos données ont été préservées
+                        et nos équipes formées en un temps record.&nbsp;»
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div>
+                            <strong>Responsable IT</strong>
+                            <span>Groupe industriel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        «&nbsp;Un consultant Odoo rare : il comprend autant le code que
+                        les enjeux business. Notre ROI a été visible dès le premier
+                        trimestre après la mise en production.&nbsp;»
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div>
+                            <strong>CEO</strong>
+                            <span>Startup fintech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="testimonial-dot active" data-index="0"></button>
+                <button class="testimonial-dot" data-index="1"></button>
+                <button class="testimonial-dot" data-index="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
+                <h2 class="section-title">Travaillons ensemble</h2>
+                <p class="section-subtitle">Un projet Odoo en tête ? Discutons-en !</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:tsitanakhyme@gmail.com">tsitanakhyme@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/261345704780">+261 34 57 047 80</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/khyme-tsitana-web-developer" target="_blank" rel="noopener">Khyme Tsitana</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/tsitanakhyme" target="_blank" rel="noopener">tsitanakhyme</a>
+                        </div>
+                    </div>
+                    <div class="contact-availability">
+                        <div class="availability-dot"></div>
+                        <span>Actuellement disponible pour de nouvelles missions</span>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Choisir un sujet...</option>
+                            <option value="module">Développement de module</option>
+                            <option value="integration">Intégration Odoo</option>
+                            <option value="migration">Migration de version</option>
+                            <option value="conseil">Conseil & audit</option>
+                            <option value="formation">Formation</option>
+                            <option value="maintenance">Maintenance & support</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span style="color: var(--text-muted); font-size: 0.85em;">(minimum 10 caractères)</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required minlength="10" maxlength="5000"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                    <div class="form-feedback" id="formFeedback"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <span class="logo-bracket">{</span>TK<span class="logo-bracket">}</span>
+                    </a>
+                    <p>Développeur & Consultant Odoo.<br>Solutions ERP sur mesure pour votre entreprise.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/khyme-tsitana-web-developer" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tsitanakhyme" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/261345704780" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:tsitanakhyme@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#portfolio">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Développement Odoo</a></li>
+                        <li><a href="#services">Intégration ERP</a></li>
+                        <li><a href="#services">Migration</a></li>
+                        <li><a href="#services">Formation</a></li>
+                        <li><a href="#services">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tsitana Khyme. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

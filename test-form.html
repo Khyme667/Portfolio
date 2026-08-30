@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Formulaire Contact</title>
+</head>
+<body>
+    <h1>Test Backend</h1>
+    <button onclick="testContact()">Envoyer Test</button>
+    <pre id="result"></pre>
+
+    <script>
+    async function testContact() {
+        const data = {
+            name: "Test User",
+            email: "test@example.com",
+            subject: "module",
+            message: "Ceci est un message de test"
+        };
+
+        const result = document.getElementById('result');
+        result.textContent = 'Envoi en cours...\n';
+
+        try {
+            console.log('Envoi vers:', 'http://localhost:3000/api/contact');
+            console.log('Données:', data);
+
+            const response = await fetch('http://localhost:3000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            console.log('Response status:', response.status);
+            const json = await response.json();
+            console.log('Response:', json);
+
+            result.textContent += 'Status: ' + response.status + '\n';
+            result.textContent += 'Réponse:\n' + JSON.stringify(json, null, 2);
+        } catch (error) {
+            console.error('Erreur:', error);
+            result.textContent += 'ERREUR: ' + error.message;
+        }
+    }
+    </script>
+</body>
+</html>
