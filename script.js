@@ -258,15 +258,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const formFeedback = document.getElementById('formFeedback');
 
-    // Fallback API URL (direct)
-    let API_URL = 'http://localhost:3000/api/contact';
-    if (typeof CONFIG !== 'undefined' && CONFIG.apiUrl) {
-        // En production, utilise les Netlify functions directement
-        const baseUrl = CONFIG.apiUrl.replace(/\/$/, '');
-        API_URL = baseUrl.includes('.netlify')
-            ? `${baseUrl}/contact`  // Netlify functions
-            : `${baseUrl}/contact`; // Backend local
+    // API URL configuration
+    let API_URL;
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Local development - use Express backend
+        API_URL = 'http://localhost:3000/api/contact';
+    } else {
+        // Production - use Netlify function
+        API_URL = '/.netlify/functions/contact';
     }
+    console.log('API_URL:', API_URL);
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
