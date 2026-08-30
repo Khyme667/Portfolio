@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages (if any in the future)
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /.netlify/
+
+# Sitemap location
+Sitemap: https://votre-site.netlify.app/sitemap.xml

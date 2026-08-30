@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tsitana Khyme",
+  "url": "https://votre-site.netlify.app",
+  "image": "https://votre-site.netlify.app/src/img/profil.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/khyme-tsitana-web-developer",
+    "https://github.com/Khyme667"
+  ],
+  "jobTitle": "Développeur & Consultant Odoo",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Développeur Odoo expert avec 5+ ans d'expérience en développement de modules, migration et intégration ERP.",
+  "email": "tsitanakhyme@gmail.com",
+  "telephone": "+261345704780",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Madagascar"
+  },
+  "knowsAbout": [
+    "Odoo ERP",
+    "Python",
+    "JavaScript",
+    "PostgreSQL",
+    "XML",
+    "API REST",
+    "Git",
+    "Linux"
+  ],
+  "alumniOf": "Université de Madagascar",
+  "knowsLanguage": ["fr", "mg"]
+}
