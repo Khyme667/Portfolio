@@ -3,8 +3,10 @@
 // ═══════════════════════════════════════════════════
 
 const CONFIG = {
-    // Backend API URL
-    apiUrl: 'http://localhost:3000/api', // Changer pour 'https://ton-backend.com/api' en production
+    // Backend API URL (auto-detect production vs local)
+    apiUrl: window.location.hostname === 'localhost'
+        ? 'http://localhost:3000/api'
+        : `${window.location.origin}/.netlify/functions`
 
     // Google Analytics (optionnel)
     gaTrackingId: 'G-XXXXXXXXXX', // Remplacer par votre ID GA4

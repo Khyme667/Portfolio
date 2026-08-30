@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-functions",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.7",
+    "validator": "^13.11.0"
+  }
+}

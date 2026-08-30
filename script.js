@@ -261,9 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback API URL (direct)
     let API_URL = 'http://localhost:3000/api/contact';
     if (typeof CONFIG !== 'undefined' && CONFIG.apiUrl) {
-        // Enlève le trailing slash au cas où
+        // En production, utilise les Netlify functions directement
         const baseUrl = CONFIG.apiUrl.replace(/\/$/, '');
-        API_URL = baseUrl.endsWith('/api') ? `${baseUrl}/contact` : `${baseUrl}/api/contact`;
+        API_URL = baseUrl.includes('.netlify')
+            ? `${baseUrl}/contact`  // Netlify functions
+            : `${baseUrl}/contact`; // Backend local
     }
 
     contactForm.addEventListener('submit', async (e) => {
@@ -324,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Result:', result);
 
             if (response.ok && result.success) {
-                formFeedback.textContent = '✅ ' + result.message;
-                formFeedback.className = 'form-feedback success';
+                // Show success modal instead of inline message
+                showSuccessModal();
                 contactForm.reset();
 
                 // Analytics tracking (si configuré)
@@ -403,4 +405,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         heroObserver.observe(document.getElementById('hero'));
     }
+
+    // ─── Success Modal Functions ───
+    window.showSuccessModal = function() {
+        const modal = document.getElementById('successModal');
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        // Create confetti effect
+        createConfetti();
+    };
+
+    window.closeSuccessModal = function() {
+        const modal = document.getElementById('successModal');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    };
+
+    // Close modal on overlay click
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById('successModal');
+        if (e.target === modal || e.target.classList.contains('success-modal-overlay')) {
+            closeSuccessModal();
+        }
+    });
+
+    // Confetti effect
+    function createConfetti() {
+        const colors = ['#714B67', '#8f6585', '#28c840', '#ffbd2e'];
+        const confettiCount = 50;
+
+        for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.cssText = `
+                position: fixed;
+                width: ${Math.random() * 10 + 5}px;
+                height: ${Math.random() * 10 + 5}px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                left: ${Math.random() * 100}vw;
+                top: -20px;
+                opacity: ${Math.random() * 0.7 + 0.3};
+                border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                z-index: 10001;
+                pointer-events: none;
+                animation: confettiFall ${Math.random() * 3 + 2}s linear forwards;
+            `;
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 5000);
+        }
+    }
+
+    // Inject confetti animation
+    const confettiStyle = document.createElement('style');
+    confettiStyle.textContent = `
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(${Math.random() * 720}deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(confettiStyle);
 });

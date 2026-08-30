@@ -1,0 +1,27 @@
+# Netlify configuration for Tsitana Khyme Portfolio
+
+[build]
+  command = "npm install --prefix backend"
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/src/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
