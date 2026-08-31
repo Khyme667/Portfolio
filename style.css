@@ -917,6 +917,44 @@ blockquote {
 }
 
 /* ════════════════════════════════════════════════════
+   FAQ (SEO Featured Snippets)
+   ════════════════════════════════════════════════════ */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+}
+.faq-item {
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+.faq-item:hover {
+    border-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+.faq-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.faq-item h3::before {
+    content: '❓';
+    margin-right: 8px;
+}
+.faq-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ════════════════════════════════════════════════════
    CONTACT
    ════════════════════════════════════════════════════ */
 .contact-grid {

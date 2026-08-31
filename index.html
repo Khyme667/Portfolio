@@ -33,9 +33,18 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://portfolio-tsitana-khyme.netlify.app/">
 
+    <!-- Hreflang for language -->
+    <link rel="alternate" hreflang="fr" href="https://portfolio-tsitana-khyme.netlify.app/">
+    <link rel="alternate" hreflang="x-default" href="https://portfolio-tsitana-khyme.netlify.app/">
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -60,20 +69,131 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Tsitana Khyme",
-      "url": "https://votre-site.netlify.app",
+      "url": "https://portfolio-tsitana-khyme.netlify.app",
       "image": "https://portfolio-tsitana-khyme.netlify.app/src/img/profil.png",
       "sameAs": [
         "https://www.linkedin.com/in/khyme-tsitana-web-developer",
         "https://github.com/Khyme667"
       ],
       "jobTitle": "Développeur & Consultant Odoo",
-      "description": "Développeur Odoo expert avec 5+ ans d'expérience en développement de modules, migration et intégration ERP.",
-      "email": "Khyme667@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "Développeur Odoo expert avec 5+ ans d'expérience en développement de modules personnalisés, migration Odoo 8-19, intégration ERP et formation professionnelle. Basé à Madagascar, intervention internationale.",
+      "email": "tsitanakhyme@gmail.com",
       "telephone": "+261345704780",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "Madagascar"
+      },
+      "knowsAbout": [
+        "Odoo ERP",
+        "Python",
+        "JavaScript",
+        "PostgreSQL",
+        "XML",
+        "API REST",
+        "Git",
+        "Linux"
+      ],
+      "knowsLanguage": ["fr", "mg"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Université de Madagascar"
       }
+    }
+    </script>
+
+    <!-- FAQ Schema for Featured Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quels types de modules Odoo développez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je développe des modules sur mesure dans tous les domaines : ventes, achats, stock, comptabilité, RH, paie, fabrication (MRP), e-commerce, point de vente, et bien plus. Chaque module est adapté aux processus métier spécifiques de votre entreprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une migration Odoo ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le coût dépend de la complexité : nombre de modules personnalisés, volume de données, et version source/destination. Contactez-moi pour un devis gratuit basé sur votre audit initial. Les migrations simples démarrent à partir de 500€."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Travaillez-vous en remote ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, je travaille principalement en remote pour des clients à Madagascar et à l'international. Les outils modernes permettent un suivi efficace à distance. Les déplacements sur site sont possibles pour les phases critiques."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles versions d'Odoo maîtrisez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je maîtrise Odoo de la version 8 à la version 19 (dernière release). Mon expertise couvre les versions anciennes pour les migrations et les versions récentes (v17, v18, v19) pour les nouveaux déploiements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des formations Odoo ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, je propose des formations personnalisées pour vos équipes : utilisateurs finaux, administrateurs techniques, et développeurs. Les formations peuvent être réalisées en présentiel à Madagascar ou en visioconférence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment se déroule un projet type ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un projet suit 5 étapes : Découverte & Analyse → Conception → Développement itératif → Déploiement & Formation → Suivi. Je communique régulièrement avec des démos et rapports d'avancement."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://portfolio-tsitana-khyme.netlify.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://portfolio-tsitana-khyme.netlify.app/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Portfolio",
+          "item": "https://portfolio-tsitana-khyme.netlify.app/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://portfolio-tsitana-khyme.netlify.app/#contact"
+        }
+      ]
     }
     </script>
 </head>
@@ -90,6 +210,7 @@
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#portfolio">Réalisations</a></li>
                 <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="nav-cta">Me contacter</a></li>
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
@@ -190,7 +311,7 @@
             <div class="about-grid">
                 <div class="about-image">
                     <div class="about-photo-frame">
-                        <img src="./src/img/profil.png" alt="Tsitana Khyme">
+                        <img src="./src/img/profil.png" alt="Tsitana Khyme - Développeur et Consultant Odoo Expert à Madagascar" width="400" height="400" loading="lazy">
                     </div>
                     <div class="about-decorations">
                         <div class="decoration-dot dot-1"></div>
@@ -749,6 +870,43 @@
         </div>
     </section>
 
+    <!-- ═══════════════════ FAQ (SEO) ═══════════════════ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title">Questions fréquentes</h2>
+                <p class="section-subtitle">Réponses aux interrogations les plus courantes</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Quels types de modules Odoo développez-vous ?</h3>
+                    <p>Je développe des modules sur mesure dans tous les domaines : ventes, achats, stock, comptabilité, RH, paie, fabrication (MRP), e-commerce, point de vente, et bien plus. Chaque module est adapté aux processus métier spécifiques de votre entreprise.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Combien coûte une migration Odoo ?</h3>
+                    <p>Le coût dépend de la complexité : nombre de modules personnalisés, volume de données, et version source/destination. Contactez-moi pour un devis gratuit basé sur votre audit initial. Les migrations simples démarrent à partir de 500€.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Travaillez-vous en remote ?</h3>
+                    <p>Oui, je travaille principalement en remote pour des clients à Madagascar et à l'international. Les outils modernes de communication et de collaboration permettent un suivi efficace à distance. Les déplacements sur site sont possibles pour les phases critiques.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelles versions d'Odoo maîtrisez-vous ?</h3>
+                    <p>Je maîtrise Odoo de la version 8 à la version 19 (dernière release). Mon expertise couvre les versions anciennes pour les migrations et les versions récentes (v17, v18, v19) pour les nouveaux déploiements.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Proposez-vous des formations Odoo ?</h3>
+                    <p>Oui, je propose des formations personnalisées pour vos équipes : utilisateurs finaux, administrateurs techniques, et développeurs. Les formations peuvent être réalisées en présentiel à Madagascar ou en visioconférence.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Comment se déroule un projet type ?</h3>
+                    <p>Un projet suit 5 étapes : Découverte & Analyse → Conception → Développement itératif → Déploiement & Formation → Suivi. Je communique régulièrement avec des démos et rapports d'avancement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════════════ FOOTER ═══════════════════ -->
     <footer class="footer">
         <div class="container">
@@ -772,6 +930,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#skills">Compétences</a></li>
                         <li><a href="#portfolio">Réalisations</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -780,9 +939,9 @@
                     <ul>
                         <li><a href="#services">Développement Odoo</a></li>
                         <li><a href="#services">Intégration ERP</a></li>
-                        <li><a href="#services">Migration</a></li>
-                        <li><a href="#services">Formation</a></li>
-                        <li><a href="#services">Support</a></li>
+                        <li><a href="#services">Migration Odoo</a></li>
+                        <li><a href="#services">Formation Odoo</a></li>
+                        <li><a href="#services">Support & Maintenance</a></li>
                     </ul>
                 </div>
             </div>

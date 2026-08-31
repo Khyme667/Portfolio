@@ -1,6 +1,6 @@
 # 📋 Progression - Portfolio Tsitana Khyme
 
-**Dernière mise à jour :** 2026-08-30 (22h)
+**Dernière mise à jour :** 2026-08-31 (SEO maximisé)
 
 ---
 
@@ -8,15 +8,38 @@
 
 | Élément | Status | Détails |
 |---------|--------|---------|
-| Portfolio complet | ✅ | 9 sections, dark/light mode, responsive |
+| Portfolio complet | ✅ | 10 sections, dark/light mode, responsive |
 | Backend Netlify Functions | ✅ | Formulaire contact fonctionnel |
 | Envoi email Gmail | ✅ | tsitanakhyme@gmail.com |
 | Modal succès animée | ✅ | Confettis + animation |
-| SEO optimisé | ✅ | Meta tags, Open Graph, Schema.org, sitemap |
+| **SEO maximisé** | ✅ | 4 schemas JSON-LD, FAQ, breadcrumbs, hreflang |
 | Google Analytics | ✅ | ID: G-SE3H8W5B9Z |
 | GitHub repo | ✅ | https://github.com/Khyme667/Portfolio |
 | Netlify deploy | ✅ | https://portfolio-tsitana-khyme.netlify.app |
 | Usernames corrigés | ✅ | GitHub: Khyme667 partout |
+
+---
+
+## 🎯 SEO - Améliorations appliquées (31 août)
+
+### Schemas JSON-LD (4 total)
+1. **Person** - Infos complètes, knowsAbout, worksFor, alumniOf
+2. **FAQPage** - 6 questions pour featured snippets Google
+3. **BreadcrumbList** - Fil d'Ariane pour navigation structurée
+
+### Optimisations techniques
+- ✅ Hreflang tags (fr + x-default)
+- ✅ Preconnect pour fonts + CDN
+- ✅ Preload resources critiques
+- ✅ Image alt descriptive + width/height + loading="lazy"
+- ✅ URL JSON-LD corrigée (était `votre-site.netlify.app`)
+- ✅ Email corrigé dans schema (Khyme667 → tsitanakhyme)
+
+### Contenu SEO
+- ✅ Section FAQ ajoutée (6 questions ciblées)
+- ✅ Navigation mise à jour (FAQ dans nav + footer)
+- ✅ Sitemap mis à jour (sections process + FAQ)
+- ✅ Footer services avec keywords naturels
 
 ---
 
